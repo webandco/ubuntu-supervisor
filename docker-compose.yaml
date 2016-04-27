@@ -1,0 +1,2 @@
+webco_server:
+  image: webandco/ubuntu-supervisor
