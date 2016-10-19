@@ -5,4 +5,10 @@ machine:
 dependencies:
   override:
     - docker build -t webandco/ubuntu-supervisor .
-    - docker run -d --name webandco/ubuntu-supervisor
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e ${DOCKER_EMAIL} -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push webandco/ubuntu-supervisor
