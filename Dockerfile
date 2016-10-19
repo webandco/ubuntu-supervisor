@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER David Spiola <david(at)webandco.com>
 
 ADD root /

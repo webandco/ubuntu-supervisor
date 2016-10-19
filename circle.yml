@@ -1,0 +1,8 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t webandco/ubuntu-supervisor .
+    - docker run -d --name webandco/ubuntu-supervisor
