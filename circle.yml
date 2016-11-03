@@ -10,5 +10,5 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker login -e <%= ENV['DOCKER_EMAIL'] %> -u <%= ENV['DOCKER_USER'] %> -p <%= ENV['DOCKER_PASS'] %>
+      - docker login -e ${DOCKER_EMAIL} -u ${DOCKER_USER} -p ${DOCKER_PASS}
       - docker push webandco/ubuntu-supervisor
