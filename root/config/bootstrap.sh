@@ -5,8 +5,12 @@ set -u
 
 echo "bootstraping environment..."
 
-mkdir -p /data/conf /data/run /data/logs
-chmod 711 /data/conf /data/run /data/logs
+if [ "$(ls /config/init/)" ]; then
+  for init in /config/init/*.sh; do
+    . $init
+  done
+fi
+
 
 echo "start supervisor"
 /usr/bin/supervisord
